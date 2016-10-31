@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
 
   def logout
     current_user.reset_session_token
+    @current_user = nil
     session[:session_token] = nil
   end
 
@@ -24,6 +25,6 @@ class ApplicationController < ActionController::Base
   end
 
   def ensure_login
-    # TODO: 
+    # TODO:
   end
 end
